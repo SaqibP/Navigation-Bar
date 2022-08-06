@@ -1,0 +1,151 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background: rgba(136, 20, 55, 1);
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 0.5rem;
+}
+
+.header a {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav-con.logo {
+  transition-delay: 0.3s;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 50px;
+  z-index: 3;
+}
+
+.menu-toggle div {
+  background-color: white;
+  border-radius: 25px;
+  height: 7px;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.13, 0.25, 0.35, 1.65);
+}
+
+.main-con {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-con h2 {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.main-con p {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.main-nav-li::before,
+.main-nav-li::after {
+  content: '';
+  background-color: rgb(36, 34, 34);
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 0vw;
+  transition: all 0.1s ease-in-out 0.3s;
+  z-index: 2;
+}
+
+.main-nav-li::before {
+  left: 0;
+}
+
+.main-nav-li::after {
+  right: 0;
+}
+
+.main-nav-li ul {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  z-index: 2;
+}
+
+.main-nav-li a {
+  display: block;
+  color: #333;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-top: 1.3rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.main-nav-li.active::before,
+.main-nav-li.active::after {
+  width: 25vw;
+}
+
+.main-nav-li.active ul {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s cubic-bezier(0.1, 0.2, 0.3, 1.4) 0.55s;
+}
+
+.nav-con {
+  position: relative;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav-li.active a {
+  opacity: 1;
+  color: white;
+}
+
+.main-nav-li a:hover {
+  border-style: solid;
+  border-color: black;
+}
+
+.nav-con.active h1 {
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
